@@ -10,6 +10,7 @@ const ioc = new Container();
 ioc
 	.bind<ICustomerReadRepository>('CustomerReadRepository')
 	.to(CustomerReadRedisRepository);
+
 ioc.bind<ICustomerReadRepository>('MySQL').to(CustomerReadMySqlRepository);
 
 export { ioc };
