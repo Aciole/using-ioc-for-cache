@@ -214,7 +214,7 @@ export class CustomerReadRedisRepository implements ICustomerReadRepository {
 
 ```
 
-Fim, é algo bem simples, mas podeser usado atém em camadas anti-corrupção, enfim se tiver curiosidade/dúvida sobre configuração em uma api express, execute esse projeto, tem mais código hehe.
+Fim, é algo bem simples, mas podeser usado atém em camadas anti-corrupção, enfim se tiver curiosidade/dúvida sobre configuração em uma api express, swagger, execute esse projeto, tem mais código hehe.
 
 ## Para Executar o Projeto
 
@@ -236,4 +236,4 @@ yarn start
 
 ```
 
-Open [http://localhost:3000/api-docs/swagger/](http://localhost:3000/api-docs/swagger/) with your browser to see the result.
+Abrir no navegador [http://localhost:3000/api-docs/swagger/](http://localhost:3000/api-docs/swagger/)
