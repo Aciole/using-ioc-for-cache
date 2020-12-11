@@ -173,7 +173,7 @@ export { ioc };
 
 ### Terceiro passo
 
-Agora vou adicionar a **magia**, adicione a injeção da consulta em base, na classe de cache (é ficou confuso essa fase, vamos ao código, que fica fácil de entender):
+Agora vou adicionar a **magia**, adicione a injeção da consulta em base, na classe de cache (é ficou confuso essa frase, vamos ao código, que fica fácil de entender):
 
 ```ts
 import { injectable, inject } from 'inversify';
