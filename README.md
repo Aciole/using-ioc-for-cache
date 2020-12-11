@@ -17,7 +17,7 @@ export interface ICustomerReadRepository {
 }
 ```
 
-A implementação:
+A implementação que seguirá logo abaixo tem um [Decorator](https://www.typescriptlang.org/docs/handbook/decorators.html) **@injectable** que indica para a biblioteção de ioc, que essa classe pode ser "Injetada", como veremos no próximo tópico;
 
 ```ts
 import { injectable } from 'inversify';
