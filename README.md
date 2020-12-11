@@ -56,7 +56,8 @@ export class CustomerReadMySqlRepository implements ICustomerReadRepository {
 ## Princípio da inversão de dependência (DIP)
 
 > "deve-se depender de abstrações, não de objetos concretos."
-> Para fazer a inversão de controle estou usando a biblioteca [inversify](https://inversify.io/)
+
+Para fazer a inversão de controle estou usando a biblioteca [inversify](https://inversify.io/)
 
 A implementação dela é bastante simples:
 
