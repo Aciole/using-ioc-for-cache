@@ -4,7 +4,7 @@ Um pequeno exemplo, implementado cache em consulta aplicando dois conceitos do a
 
 > "Muitas interfaces de clientes específicas, são melhores do que uma para todos propósitos."
 
-Em outras palavras "Seja coeso na criação de interfaces para que não seja necessario fazer implementação desnecessaria em classes especializadas"(quanto maus enxuta melhor).
+Em outras palavras "Seja coeso na criação de interfaces para que não seja necessario fazer implementação desnecessaria em classes especializadas"(quanto mais enxuta melhor).
 
 Trabalharemos em cima da interface **ICustomerReadRepository** que possui o método
 **getById**:
@@ -103,7 +103,7 @@ class CustomerControler {
 
 ## Ah beleza, e o cache de maneira elegante?
 
-> Preciso adicionar cache em uma consulta respeitando o SOLID, onde
+> Preciso adicionar cache em uma consulta respeitando o SOLID,
 > onde primeiro faço uma consulta no cache, caso não exista, consulto na minha base,
 > se retornar resultado, adicionar no cache e retorna o valor para o requisitor.
 
