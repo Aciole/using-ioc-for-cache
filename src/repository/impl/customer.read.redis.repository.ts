@@ -12,23 +12,27 @@ export class CustomerReadRedisRepository implements ICustomerReadRepository {
 		},
 	];
 
-	constructor(@inject('MySQL') private inner: ICustomerReadRepository) {}
+	constructor(
+		@inject('MySQL') private mysqlRepository: ICustomerReadRepository
+	) {}
 
-	async getById(id: string): Promise<CustomerModel> {
-		const customerInCache = this.dbRedis.find((data) => data.id == id);
+	async getById(id: string): Promise<CustomerModel | undefined> {
+		let customerResult: CustomerModel | undefined = this.dbRedis.find(
+			(data) => data.id === id
+		);
 
-		if (customerInCache != null) {
+		if (customerResult != null) {
 			console.log('customer found in cache');
-			return await new Promise((resolve) => resolve(customerInCache));
+			return await new Promise((resolve) => resolve(customerResult));
 		}
 
-		const resultCustomerSql = await this.inner.getById(id);
+		customerResult = await this.mysqlRepository.getById(id);
 
-		if (resultCustomerSql != null) {
-			this.setCache(resultCustomerSql);
+		if (customerResult != null) {
+			this.setCache(customerResult);
 		}
 
-		return resultCustomerSql;
+		return customerResult;
 	}
 
 	private async setCache(customer: CustomerModel): Promise<void> {

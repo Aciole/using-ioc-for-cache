@@ -16,8 +16,8 @@ export class CustomerReadMySqlRepository implements ICustomerReadRepository {
 		},
 	];
 
-	async getById(id: string): Promise<CustomerModel> {
-		let customerResult: CustomerModel;
+	async getById(id: string): Promise<CustomerModel | undefined> {
+		let customerResult: CustomerModel | undefined;
 
 		const result = this.dbMySql.find((data) => data.id == id);
 		if (result != null) {
