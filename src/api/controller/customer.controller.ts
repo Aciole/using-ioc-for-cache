@@ -13,12 +13,11 @@ import {
 	ApiPath,
 	SwaggerDefinitionConstant,
 } from 'swagger-express-ts';
+import '../../models/customer.model';
 
 import * as express from 'express';
 import { inject } from 'inversify';
 import { ICustomerReadRepository } from '../../repository/customer.read.repository';
-
-import '../../models/customer.model';
 
 @ApiPath({
 	name: 'customer',

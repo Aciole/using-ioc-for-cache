@@ -4,7 +4,7 @@ Um pequeno exemplo, implementado cache em consulta aplicando dois conceitos do a
 
 > "muitas interfaces de clientes específicas, são melhores do que uma para todos propósitos."
 
-em outras palavras "Seja coeso na criação de interfaces para que não seja necessario fazer implementação desnecessaria em classes especializadas"(quanto maus enxuta melhor).
+Em outras palavras "Seja coeso na criação de interfaces para que não seja necessario fazer implementação desnecessaria em classes especializadas"(quanto maus enxuta melhor).
 
 Trabalharemos em cima da interface **ICustomerReadRepository** que possui o método
 **getById**:
@@ -77,7 +77,39 @@ ioc
 export { ioc };
 ```
 
-## Estrutura do Projeto
+Como resolver esse injeção manualmente:
+
+```ts
+import { ioc } from './config/ioc.config';
+import { ICustomerReadRepository } from './repository/customer.read.repository';
+import { CustomerModel } from './models/customer.model';
+
+const main = async (id: string): Promise<CustomerModel> => {
+	const repository = ioc.get<ICustomerReadRepository>('CustomerReadRepository');
+
+	return await repository.getById(id);
+};
+
+console.log('result', await main('1'));
+```
+
+Com decorator (fica mais sexy, não é?):
+
+```ts
+...
+class CustomerControler {
+	constructor(
+		@inject('CustomerReadRepository')
+		private customerReadRepository: ICustomerReadRepository
+		) {
+	}
+
+	async getById(id: string): Promise<CustomerModel> {
+		return await this.customerReadRepository.getById(id);
+	}
+}
+
+```
 
 ## Getting Started
 
@@ -91,5 +123,3 @@ yarn start
 ```
 
 Open [http://localhost:3000/api-docs/swagger/](http://localhost:3000/api-docs/swagger/) with your browser to see the result.
-
-## The Basics
