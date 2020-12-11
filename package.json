@@ -1,0 +1,17 @@
+{
+  "name": "using-ioc-for-cache",
+  "version": "1.0.0",
+  "main": "src/main",
+  "repository": "https://github.com/Aciole/using-ioc-for-cache.git",
+  "author": "Aciole",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev ./src/main.ts"
+  },
+  "dependencies": {
+    "inversify": "^5.0.5",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.2"
+  }
+}
