@@ -214,7 +214,7 @@ export class CustomerReadRedisRepository implements ICustomerReadRepository {
 
 ```
 
-Fim, se tiver curiosidade/dúvida sobre configuração em uma api express, execute esse projeto
+Fim, é algo bem simples, mas podeser usado atém em camadas anti-corrupção, enfim se tiver curiosidade/dúvida sobre configuração em uma api express, execute esse projeto, tem mais código hehe.
 
 ## Para Executar o Projeto
 
